@@ -34,7 +34,6 @@ public class TeamService {
     public TeamDomain getTeamByName(String teamName){
 
         TeamDomain teamDomain = teamRepository.findByTeamName(teamName).get();
-        System.out.println("### team service getTeamByTeamName :: "+teamDomain);
 
         return teamDomain;
     }
@@ -123,11 +122,6 @@ public class TeamService {
                 .teamIndex(teamIndex)
                 .teamName(teamName)
                 .build();
-
-        System.out.println("#####");
-        System.out.println(teamDomain.getTeamIndex());
-        System.out.println(teamDomain.getTeamName());
-
 
         teamRepository.save(teamDomain);
         teamMemberRepository.deleteAllByTeamDomain_TeamIndex(teamIndex);

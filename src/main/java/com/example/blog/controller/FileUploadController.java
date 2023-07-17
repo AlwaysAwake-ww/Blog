@@ -54,7 +54,6 @@ public class FileUploadController {
 
         Long memberIndex = memberDomain.getMemberIndex();
 
-        System.out.println("## image upload ajax method called ##");
         String rootPath = new File("").getAbsolutePath();
         String sep = File.separator;
         String directory =rootPath+sep+"src"+sep+"main"+sep+"resources"+sep+"static"+sep+"uploadresult"+sep+"temp"+sep+memberIndex.toString();
@@ -63,13 +62,11 @@ public class FileUploadController {
         String originName = file.getOriginalFilename();
         String ext = FilenameUtils.getExtension(originName);
         String newName = UUID.randomUUID()+"."+ext;
-        System.out.println("## originName :: "+originName);
         File dir = new File(directory);
 
         if(!dir.exists()) {
             try {
                 dir.mkdirs();
-                System.out.println("directory init");
             } catch (Exception e) {
                 e.getStackTrace();
             }
@@ -99,7 +96,6 @@ public class FileUploadController {
         String sep = File.separator;
         String directory =rootPath+sep+"src"+sep+"main"+sep+"resources"+sep+"static"+sep+"uploadresult"+sep+"temp"+sep+memberIndex.toString();
 
-        System.out.println("## imageName :: "+imageName);
         Path filePath = Paths.get(directory +sep+ imageName);
         Files.delete(filePath);
 
@@ -128,7 +124,6 @@ public class FileUploadController {
         if(!dir.exists()) {
             try {
                 dir.mkdirs();
-                System.out.println("directory init");
             } catch (Exception e) {
                 e.getStackTrace();
             }
@@ -138,10 +133,8 @@ public class FileUploadController {
             File[] files = dir.listFiles();
 
             for (File existFile : files) {
-                System.out.println("## exist file :: "+existFile.getName());
 
                 if (existFile.isFile() && existFile.getName().startsWith("thumbnail-")) {
-                    System.out.println("## exist file checked :: "+existFile.getName());
                     existFile.delete();
                 }
             }

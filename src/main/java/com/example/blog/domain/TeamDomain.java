@@ -13,19 +13,10 @@ import java.util.List;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-//@SequenceGenerator(
-//        name = "TEAM_SEQ_GENERATOR",
-//        sequenceName = "TEAM_SEQ",
-//        initialValue = 1,
-//        allocationSize = 1
-//)
+
 public class TeamDomain {
 
     @Id
-//    @GeneratedValue(
-//            strategy = GenerationType.SEQUENCE,
-//            generator = "TEAM_SEQ_GENERATOR"
-//    )
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="team_index")
     private Long teamIndex;

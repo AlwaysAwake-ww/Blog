@@ -52,7 +52,6 @@ public class PostController {
     public String posting(@RequestParam("title") String title, @RequestParam("content") String content, @RequestParam(value = "imageOriginNameArr[]", required = false) List<String> originNameList, @RequestParam(value = "imageNewNameArr[]",required = false) List<String> newNameList, @RequestParam(value = "teamName", required = false)String teamName, @AuthenticationPrincipal MemberDetail memberDetail){
 
         MemberDomain memberDomain = memberDetailService.getMemberDomain(memberDetail.getUsername());
-        System.out.println("### team name :: "+teamName);
 
         TeamDomain teamDomain = teamService.getTeamByName(teamName);
 
@@ -88,9 +87,6 @@ public class PostController {
 
         Member member = memberDetailService.getMember(memberDetail.getUsername());
 
-
-        System.out.println("## keyword :: "+keyword);
-        System.out.println("## category :: "+category);
 
         Page<PostDomain> list;
 
@@ -199,7 +195,6 @@ public class PostController {
     @GetMapping("/user/post/edit/{postNum}")
     public ModelAndView postEdit(@PathVariable("postNum") Long postNum,@AuthenticationPrincipal MemberDetail memberDetail, ModelAndView model){
 
-        System.out.println(" ## edit method called");
 
         PostDomain postDomain = postService.findByIndex(postNum);
         List<ImageDomain> imageDomainList = imageService.findByPostDomain(postDomain);
@@ -209,7 +204,6 @@ public class PostController {
 
         for(ImageDomain image : imageDomainList){
             if(image.getNewName().startsWith("thumbnail-")){
-                System.out.println("## thumbnail exist :: "+image.getNewName());
                 model.addObject("thumbnail", image.getNewName());
             }
         }

@@ -15,19 +15,10 @@ import java.util.List;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-//@SequenceGenerator(
-//        name = "MEMBER_SEQ_GENERATOR",
-//        sequenceName = "MEMBER_SEQ",
-//        initialValue = 1,
-//        allocationSize = 1
-//)
+
 public class MemberDomain {
 
     @Id
-//    @GeneratedValue(
-//            strategy = GenerationType.SEQUENCE,
-//            generator = "MEMBER_SEQ_GENERATOR"
-//    )
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="member_index")
     private Long memberIndex;

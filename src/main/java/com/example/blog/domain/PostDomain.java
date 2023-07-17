@@ -11,19 +11,9 @@ import lombok.*;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-//@SequenceGenerator(
-//        name = "POST_SEQ_GENERATOR",
-//        sequenceName = "POST_SEQ",
-//        initialValue = 1,
-//        allocationSize = 1
-//)
 public class PostDomain {
 
     @Id
-//    @GeneratedValue(
-//            strategy = GenerationType.SEQUENCE,
-//            generator = "POST_SEQ_GENERATOR"
-//    )
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="post_index")
     private Long postIndex;

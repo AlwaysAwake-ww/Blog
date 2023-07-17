@@ -60,7 +60,6 @@ public class PostService {
     @Transactional
     public void saveWithImage(PostDomain postDomain, List<String> originName, List<String> newName){
 
-        System.out.println("## saveWithImage called");
         PostDomain savedPost = postRepository.save(postDomain);
 
         int size = originName.size();

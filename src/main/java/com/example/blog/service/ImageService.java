@@ -24,7 +24,6 @@ public class ImageService {
     }
 
     public void deleteByPostDomain(PostDomain postDomain){
-        System.out.println("## delete by postDomain called ");
 
         imageRepository.deleteAllByPostDomain(postDomain);
     }

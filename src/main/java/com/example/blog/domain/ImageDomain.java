@@ -11,21 +11,11 @@ import lombok.*;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-//@SequenceGenerator(
-//        name = "IMAGE_SEQ_GENERATOR",
-//        sequenceName = "IMAGE_SEQ",
-//        initialValue = 1,
-//        allocationSize = 1
-//)
 public class ImageDomain {
 
 
 
     @Id
-//    @GeneratedValue(
-//            strategy = GenerationType.SEQUENCE,
-//            generator = "IMAGE_SEQ_GENERATOR"
-//    )
     @GeneratedValue(strategy = GenerationType.IDENTITY)
    @Column(name="image_index")
     private Long imageIndex;

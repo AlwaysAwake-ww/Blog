@@ -64,10 +64,8 @@ public class ImageHandler {
             File[] files = dir.listFiles();
 
             for (File existFile : files) {
-                System.out.println("## exist file :: "+existFile.getName());
 
                 if (existFile.isFile() && existFile.getName().startsWith("thumbnail-")) {
-                    System.out.println("## exist file checked :: "+existFile.getName());
                     existFile.delete();
                 }
             }

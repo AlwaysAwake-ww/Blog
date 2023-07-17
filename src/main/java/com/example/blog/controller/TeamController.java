@@ -33,7 +33,6 @@ public class TeamController {
         ModelAndView model = new ModelAndView("teamManagement");
 
         List<TeamDomain> teamDomainList = teamService.getTeamList(memberDetailService.getMemberDomain(memberDetail.getUsername()));
-        System.out.println("## "+teamDomainList);
         model.addObject("teamDomainList", teamDomainList);
 
         return model;
@@ -56,7 +55,6 @@ public class TeamController {
 
 
             for(TeamDomain teamDomain : teamDomainList){
-                System.out.println("# "+teamDomain.getTeamName());
                 teamNameList.add(teamDomain.getTeamName());
             }
 

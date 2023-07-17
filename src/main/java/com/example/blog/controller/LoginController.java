@@ -4,7 +4,6 @@ package com.example.blog.controller;
 import com.example.blog.dto.MemberDetail;
 import com.example.blog.repository.MemberRepository;
 import com.example.blog.service.ImageService;
-import com.example.blog.service.LoginService;
 import com.example.blog.service.MemberDetailService;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
